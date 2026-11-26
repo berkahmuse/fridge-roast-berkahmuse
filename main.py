@@ -20,9 +20,13 @@ fetched 2026-11-26T00:29:06Z (window opened 2026-11-25T23:47:42Z).
 Attempt-1 anchor (same window): drand round 6674052, 2026-11-26T00:23:14Z.
 """
 
+import os
 from pathlib import Path
 
-OUT_DIR = Path("/output")
+# The grader runs the program with /output as the output directory; the
+# environment override exists only so a local run can point the same code
+# at a scratch directory without touching the entry itself.
+OUT_DIR = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
 OUT_FILE = OUT_DIR / "entry.txt"
 MAX_CHARS = 160
 
